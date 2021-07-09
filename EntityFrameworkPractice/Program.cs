@@ -6,7 +6,19 @@ namespace EntityFrameworkPractice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using (var db = new BlogContext())
+            {
+                db.Blogs.Add(new Blog { Name = "Another Blog " });
+                db.SaveChanges();
+
+                foreach (var blog in db.Blogs)
+                {
+                    Console.WriteLine(blog.Name);
+                }
+            }
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }
