@@ -19,5 +19,7 @@ namespace EntityFrameworkPractice
 
         public string Rating { get; set; }
 
+        public string Rating2 { get; set; }
+
     }
 }
